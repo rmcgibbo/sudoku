@@ -3,10 +3,10 @@
 -- | TODO
 module Sudoku (module Sudoku) where
 
-import Data.List (elemIndices, sort, transpose, intersperse)
-import Data.Tuple (uncurry)
 import Data.Char (intToDigit)
+import Data.List (elemIndices, intersperse, sort, transpose)
 import Data.List.Split (chunksOf)
+import Data.Tuple (uncurry)
 import Picosat
 
 ----------------------------------------
