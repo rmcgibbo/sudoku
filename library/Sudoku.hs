@@ -7,6 +7,7 @@ import Data.Char (intToDigit)
 import Data.List (elemIndices, intersperse, sort, transpose)
 import Data.List.Split (chunksOf)
 import Data.Tuple (uncurry)
+import Control.Applicative (pure)
 import Picosat
 
 ----------------------------------------
