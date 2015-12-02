@@ -6,4 +6,4 @@ ghc:
 
 script:
   - cabal configure --enable-tests && cabal build && cabal test && cabal check
-  - find . -name '*.hs' -not -path '*/\.*' | xargs ~/.cabal/bin/hlint
+  # - find . -name '*.hs' -not -path '*/\.*' | xargs ~/.cabal/bin/hlint
