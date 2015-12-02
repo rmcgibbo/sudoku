@@ -79,12 +79,18 @@ showSolution sol = unlines $ chunksOf 9 $ map digit onvars
     where digit v = intToDigit $ (9:[1..8]) !! (v `mod` 9)
           onvars = filter (> 0) sol
 
--- | TODO
-main :: IO ()
-main = do
-    puzzle <- readFile "puzzle.txt"
+-- | Solve a puzzle and return the filled-in solution.
+solvePuzzle  :: String -> IO String
+solvePuzzle puzzle = do
     let cnf = allClauses ++ constraintClauses puzzle
     sol <- solve cnf
     case sol of
-        Solution s -> putStr $ showSolution s
-        _          -> print "Not solvable."
+        Solution s -> return $ showSolution s
+        _          -> return $ "Not solvable."
+
+
+main :: IO ()
+main = do
+    puzzle <- readFile "puzzle.txt"
+    solved <- solvePuzzle puzzle
+    putStr solved
